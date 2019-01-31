@@ -2,7 +2,7 @@
 bene_salsa.configure:
   path: '/admin/config/bene_features/bene_salsa'
   defaults:
-    _form: '\Drupal\bene_salsa\Form\FeaturesExampleSettings'
+    _form: '\Drupal\bene_salsa\Form\BeneSalsaSettings'
     _title: 'Example Feature'
   requirements:
     _permission: 'configure bene features'
