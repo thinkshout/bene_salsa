@@ -2,4 +2,4 @@ bene_salsa.configure:
   title: Bene Salsa Module
   parent: bene.feature.config
   route_name: bene_salsa.configure
-  description: 'An example/template module for Bene Features.'
+  description: 'Salsa Embed Module'

@@ -3,6 +3,6 @@ bene_salsa.configure:
   path: '/admin/config/bene_features/bene_salsa'
   defaults:
     _form: '\Drupal\bene_salsa\Form\BeneSalsaSettings'
-    _title: 'Example Feature'
+    _title: 'Salsa Embed Configuration'
   requirements:
     _permission: 'configure bene features'
