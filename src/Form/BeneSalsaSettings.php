@@ -33,49 +33,49 @@ class BeneSalsaSettings extends ConfigFormBase {
     // Add form header describing purpose and use of form.
     $form['header'] = [
       '#type' => 'markup',
-      '#markup' => t('<h3>Bene Salsa Embed Module</h3>'),
+      '#markup' => t('<h3>Salsa Embed Configuration</h3>'),
     ];
 
     $settings = $this->config('bene_salsa.settings')->get();
     $form['sign-up'] = [
         '#title' => 'Sign Up Form',
         '#type' => 'textfield',
-        '#default_value' => isset($settings['dest']) ? $settings['dest'] : '',
+        '#default_value' => isset($settings['sign-up']) ? $settings['sign-up'] : '',
         '#description' => t('The Form Widget Code fot the Sign Up Form'),
     ];
 
     $form['fundraising'] = [
         '#title' => 'Fundraising Form',
         '#type' => 'textfield',
-        '#default_value' => isset($settings['dest']) ? $settings['dest'] : '',
+        '#default_value' => isset($settings['fundraising']) ? $settings['fundraising'] : '',
         '#description' => t('The Form Widget Code fot the Fundraising Form'),
     ];
 
     $form['petitions'] = [
         '#title' => 'Petitions Form',
         '#type' => 'textfield',
-        '#default_value' => isset($settings['dest']) ? $settings['dest'] : '',
+        '#default_value' => isset($settings['petitions']) ? $settings['petitions'] : '',
         '#description' => t('The Form Widget Code fot the Petitions Form'),
     ];
 
     $form['targeted-actions'] = [
         '#title' => 'Targeted Actions Form',
         '#type' => 'textfield',
-        '#default_value' => isset($settings['dest']) ? $settings['dest'] : '',
+        '#default_value' => isset($settings['targeted-actions']) ? $settings['targeted-actions'] : '',
         '#description' => t('The Form Widget Code fot the Targeted Actions Form'),
     ];
 
-    $form['Events'] = [
+    $form['events'] = [
         '#title' => 'Events Form',
         '#type' => 'textfield',
-        '#default_value' => isset($settings['dest']) ? $settings['dest'] : '',
+        '#default_value' => isset($settings['events']) ? $settings['events'] : '',
         '#description' => t('The Form Widget Code fot the Events Form'),
     ];
 
     $form['peer-to-peer'] = [
         '#title' => 'Peer to Peer Form',
         '#type' => 'textfield',
-        '#default_value' => isset($settings['dest']) ? $settings['dest'] : '',
+        '#default_value' => isset($settings['peer-to-peer']) ? $settings['peer-to-peer'] : '',
         '#description' => t('The Form Widget Code fot the Peer to Peer Form'),
     ];
 
@@ -90,7 +90,15 @@ class BeneSalsaSettings extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $settings = $this->configFactory()->getEditable('bene_salsa.settings');
     $values = $form_state->cleanValues()->getValues();
-    $settings->set('sign-up', $values['sign-up']);
+    foreach ($values as $field_key => $field_value) {
+        switch ($field_key) {
+            case "paths":
+                $field_value = explode("\r\n", $field_value);
+                break;
+
+        }
+        $settings->set($field_key, $field_value);
+    }
     $settings->save();
     parent::submitForm($form, $form_state);
   }
