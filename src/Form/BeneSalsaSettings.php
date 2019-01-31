@@ -33,7 +33,7 @@ class BeneSalsaSettings extends ConfigFormBase {
     // Add form header describing purpose and use of form.
     $form['header'] = [
       '#type' => 'markup',
-      '#markup' => t('<h3>Salsa Embed Configuration</h3>'),
+        '#markup' => t('<h3>Salsa Embed Configuration</h3><p>Include form widget code configuration for Salsa Forms.</p>'),
     ];
 
     $settings = $this->config('bene_salsa.settings')->get();
