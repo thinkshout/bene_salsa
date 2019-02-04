@@ -91,12 +91,6 @@ class BeneSalsaSettings extends ConfigFormBase {
     $settings = $this->configFactory()->getEditable('bene_salsa.settings');
     $values = $form_state->cleanValues()->getValues();
     foreach ($values as $field_key => $field_value) {
-        switch ($field_key) {
-            case "paths":
-                $field_value = explode("\r\n", $field_value);
-                break;
-
-        }
         $settings->set($field_key, $field_value);
     }
     $settings->save();
