@@ -62,7 +62,7 @@ class SalsaEmbedStringFormatter extends StringFormatter {
             '#type' => 'inline_template',
             '#template' => '{{ embed|raw }}',
             '#context' => [
-                'embed' => "<div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$salsa_code/?tId=$form_code' ></script>testing</div>",
+                'embed' => "<div id='salsaContainer'><div id='salsaWrapper'><div id='salsaForm'><div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$salsa_code/?tId=$form_code' ></script>testing</div></div></div></div>",
             ],
         ];
 
