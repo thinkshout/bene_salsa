@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAgBA,0DAAiB;EACf,gBAAgB,EAAE,gBAAgB;;AAEpC,mDAAY;EACV,MAAM,EAAE,aAAa;;AAEvB,mDAAY;EACV,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,gBAAgB",
+"sources": ["../sass/salsa_forms.scss"],
+"names": [],
+"file": "salsa_forms.css"
+}
