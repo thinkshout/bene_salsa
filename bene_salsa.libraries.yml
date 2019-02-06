@@ -1,0 +1,4 @@
+bene-salsa:
+  css:
+    theme:
+      css/salsa_forms.css: {}
