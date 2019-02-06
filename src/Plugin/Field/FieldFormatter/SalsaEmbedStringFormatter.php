@@ -56,12 +56,8 @@ class SalsaEmbedStringFormatter extends StringFormatter {
      * {@inheritdoc}
      */
     public function viewElements(FieldItemListInterface $items, $langcode) {
-//        $form_code ='41c8e4b0-a327-46a5-89ff-4f0014fdebd0';
-//        $salsa_code = '1ed140ec-965b-47c3-8cb3-ae01826fde8a';
         $salsa_code = $items->getEntity()->field_form_id[0]->getValue()['value'];
         $form_code = $items->getEntity()->field_form_type[0]->getValue()['value'];
-//        $salsa_code = '';
-        $var = 1;
         $elements = [
             '#type' => 'inline_template',
             '#template' => '{{ embed|raw }}',
