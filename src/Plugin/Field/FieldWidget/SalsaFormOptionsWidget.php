@@ -2,9 +2,6 @@
 namespace Drupal\bene_salsa\Plugin\Field\FieldWidget;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\Plugin\Field\FieldWidget\OptionsButtonsWidget;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Form\OptGroup;
-use Drupal\Core\Form\ConfigFormBase;
 /**
  * Plugin implementation of the 'salsa_form_options' widget.
  *
