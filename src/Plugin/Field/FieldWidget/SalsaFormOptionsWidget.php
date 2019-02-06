@@ -27,7 +27,7 @@ class SalsaFormOptionsWidget extends OptionsButtonsWidget {
      */
     protected function getOptions(FieldableEntityInterface $entity) {
         if (!isset($this->options)) {
-            $options = \Drupal::service('config.factory')->getEditable('bene_salsa.settings');
+            $options = \Drupal::service('config.factory')->get('bene_salsa.settings');
             $this->options = array_flip($options->getRawData());
         }
         return $this->options;
