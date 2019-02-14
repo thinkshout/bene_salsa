@@ -16,7 +16,7 @@ end
 
 desc 'Watch sass'
 task :sasswatch do
-    system 'sass -r sass-globbing --watch sass/salsa_forms.scss:css/salsa_forms.css'
+    system 'sass -r sass-globbing --watch sass/styles.scss:css/salsa_forms.css'
 end
 
 desc 'Serve'
