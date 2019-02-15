@@ -4,5 +4,5 @@ type: module
 core: 8.x
 configure: bene_salsa.configure
 dependencies:
-  - bene_core
+  - bene_features
 package: Bene Features
