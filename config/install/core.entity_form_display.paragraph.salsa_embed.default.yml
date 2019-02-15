@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+  - field.field.paragraph.salsa_embed.field_form_id
+  - field.field.paragraph.salsa_embed.field_form_type
+  - paragraphs.paragraphs_type.salsa_embed
+  module:
+  - bene_salsa
+id: paragraph.salsa_embed.default
+targetEntityType: paragraph
+bundle: salsa_embed
+mode: default
+content:
+  field_form_id:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_form_type:
+    type: salsa_form_options
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true
