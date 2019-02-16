@@ -36,9 +36,9 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
     if ($moduleHandler->moduleExists('bene_salsa')) {
       // Help the User set the keys.
       $salsa_config = \Drupal::config('bene_salsa.settings');
-      $form_code = $salsa_config->get('sign-up');
+      $template_code = $salsa_config->get('sign-up');
 
-      if (!$form_code) {
+      if (!$template_code) {
         $salsaSettingsForm['help_text'] = [
           '#type' => 'markup',
           '#markup' => 'Please add a <a href="/admin/config/bene_features/bene_salsa?destination=/admin/config/bene_features">Salsa Sign Up Form</a> key to begin.',
@@ -47,14 +47,14 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
         ];
       }
       else {
-        $default_salsa_code = "";
+        $default_form_code = "";
         if($configuration && array_key_exists('salsa_form_widget_id', $configuration)) {
-          $default_salsa_code = $configuration['salsa_form_widget_id'];
+          $default_form_code = $configuration['salsa_form_widget_id'];
         }
         $salsaSettingsForm['salsa_form_widget_id'] = [
           '#type' => 'textfield',
           '#title' => 'Salsa Form Widget ID',
-          '#default_value' => $default_salsa_code,
+          '#default_value' => $default_form_code,
           '#size' => 60,
           '#maxlength' => 128,
           '#required' => TRUE,
@@ -116,16 +116,16 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
     $moduleHandler = \Drupal::service('module_handler');
     if ($moduleHandler->moduleExists('bene_salsa')) {
       $salsa_config = \Drupal::config('bene_salsa.settings');
-      $form_code = $salsa_config->get('sign-up');
-      if (!$form_code) {
+      $template_code = $salsa_config->get('sign-up');
+      if (!$template_code) {
         return [];
       }
-      $salsa_code = $configuration['salsa_form_widget_id'];
+      $form_code = $configuration['salsa_form_widget_id'];
       $elements = [
         '#type' => 'inline_template',
         '#template' => '{{ embed|raw }}',
         '#context' => [
-          'embed' => "<div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$salsa_code/?tId=$form_code' ></script>testing</div>",
+          'embed' => "<div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$template_code/?tId=$form_code'></script></div>",
         ],
       ];
       return $elements;
