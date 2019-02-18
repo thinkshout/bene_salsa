@@ -41,42 +41,42 @@ class BeneSalsaSettings extends ConfigFormBase {
             '#title' => 'Sign Up Form',
             '#type' => 'textfield',
             '#default_value' => isset($settings['sign-up']) ? $settings['sign-up'] : '',
-            '#description' => t('The Form Widget Code fot the Sign Up Form'),
+            '#description' => t('The Form Widget Code for the Sign Up Form'),
         ];
 
         $form['fundraising'] = [
             '#title' => 'Fundraising Form',
             '#type' => 'textfield',
             '#default_value' => isset($settings['fundraising']) ? $settings['fundraising'] : '',
-            '#description' => t('The Form Widget Code fot the Fundraising Form'),
+            '#description' => t('The Form Widget Code for the Fundraising Form'),
         ];
 
         $form['petitions'] = [
             '#title' => 'Petitions Form',
             '#type' => 'textfield',
             '#default_value' => isset($settings['petitions']) ? $settings['petitions'] : '',
-            '#description' => t('The Form Widget Code fot the Petitions Form'),
+            '#description' => t('The Form Widget Code for the Petitions Form'),
         ];
 
         $form['targeted-actions'] = [
             '#title' => 'Targeted Actions Form',
             '#type' => 'textfield',
             '#default_value' => isset($settings['targeted-actions']) ? $settings['targeted-actions'] : '',
-            '#description' => t('The Form Widget Code fot the Targeted Actions Form'),
+            '#description' => t('The Form Widget Code for the Targeted Actions Form'),
         ];
 
         $form['events'] = [
             '#title' => 'Events Form',
             '#type' => 'textfield',
             '#default_value' => isset($settings['events']) ? $settings['events'] : '',
-            '#description' => t('The Form Widget Code fot the Events Form'),
+            '#description' => t('The Form Widget Code for the Events Form'),
         ];
 
         $form['peer-to-peer'] = [
             '#title' => 'Peer to Peer Form',
             '#type' => 'textfield',
             '#default_value' => isset($settings['peer-to-peer']) ? $settings['peer-to-peer'] : '',
-            '#description' => t('The Form Widget Code fot the Peer to Peer Form'),
+            '#description' => t('The Form Widget Code for the Peer to Peer Form'),
         ];
 
         $form['actions']['submit']['#value'] = t('Save');
