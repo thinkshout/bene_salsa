@@ -16,20 +16,20 @@ use Drupal\Core\Field\Plugin\Field\FieldWidget\OptionsButtonsWidget;
  * )
  */
 class SalsaFormOptionsWidget extends OptionsButtonsWidget {
-    /**
-     * Returns the array of form options for the widget.
-     *
-     * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
-     *   The entity for which to return options.
-     *
-     * @return array
-     *   The array of options for the widget.
-     */
-    protected function getOptions(FieldableEntityInterface $entity) {
-        if (!isset($this->options)) {
-            $options = \Drupal::service('config.factory')->get('bene_salsa.settings');
-            $this->options = array_flip($options->getRawData());
-        }
-        return $this->options;
+  /**
+   * Returns the array of form options for the widget.
+   *
+   * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
+   *   The entity for which to return options.
+   *
+   * @return array
+   *   The array of options for the widget.
+   */
+  protected function getOptions(FieldableEntityInterface $entity) {
+    if (!isset($this->options)) {
+      $options = \Drupal::service('config.factory')->get('bene_salsa.settings');
+      $this->options = array_flip($options->getRawData());
     }
+    return $this->options;
+  }
 }
