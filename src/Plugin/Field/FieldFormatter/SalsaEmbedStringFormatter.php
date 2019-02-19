@@ -56,13 +56,18 @@ class SalsaEmbedStringFormatter extends StringFormatter {
      * {@inheritdoc}
      */
     public function viewElements(FieldItemListInterface $items, $langcode) {
-        $salsa_code = $items->getEntity()->field_form_id[0]->getValue()['value'];
-        $form_code = $items->getEntity()->field_form_type[0]->getValue()['value'];
+        $salsa_code = '';
+        $form_code = '';
+        if(isset($items->getEntity()->field_form_id[0]) && isset($items->getEntity()->field_form_type[0])){
+            $salsa_code = $items->getEntity()->field_form_id[0]->getValue()['value'];
+            $form_code = $items->getEntity()->field_form_type[0]->getValue()['value'];
+        }
+
         $elements = [
             '#type' => 'inline_template',
             '#template' => '{{ embed|raw }}',
             '#context' => [
-                'embed' => "<div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$salsa_code/?tId=$form_code' ></script>testing</div>",
+                'embed' => "<div id='salsaContainer'><div id='salsaWrapper'><div id='salsaForm'><div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$salsa_code/?tId=$form_code' ></script></div></div></div></div>",
             ],
         ];
 
