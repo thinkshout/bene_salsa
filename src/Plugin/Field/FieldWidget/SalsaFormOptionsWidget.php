@@ -1,7 +1,10 @@
 <?php
+
 namespace Drupal\bene_salsa\Plugin\Field\FieldWidget;
+
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\Plugin\Field\FieldWidget\OptionsButtonsWidget;
+
 /**
  * Plugin implementation of the 'salsa_form_options' widget.
  *
@@ -16,6 +19,7 @@ use Drupal\Core\Field\Plugin\Field\FieldWidget\OptionsButtonsWidget;
  * )
  */
 class SalsaFormOptionsWidget extends OptionsButtonsWidget {
+
   /**
    * Returns the array of form options for the widget.
    *
@@ -32,4 +36,5 @@ class SalsaFormOptionsWidget extends OptionsButtonsWidget {
     }
     return $this->options;
   }
+
 }

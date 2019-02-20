@@ -42,8 +42,6 @@ class SalsaEmbedStringFormatter extends StringFormatter {
    *   The entity manager.
    */
 
-
-
   /**
    * {@inheritdoc}
    */

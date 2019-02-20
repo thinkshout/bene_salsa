@@ -48,7 +48,7 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
       }
       else {
         $default_form_code = "";
-        if($configuration && array_key_exists('salsa_form_widget_id', $configuration)) {
+        if ($configuration && array_key_exists('salsa_form_widget_id', $configuration)) {
           $default_form_code = $configuration['salsa_form_widget_id'];
         }
         $salsaSettingsForm['salsa_form_widget_id'] = [
@@ -81,8 +81,8 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The state of the form with current entries and selections.
    */
-//  public function validateSettingsForm(array $configuration, FormStateInterface $form_state) {
-//  }
+  public function validateSettingsForm(array $configuration, FormStateInterface $form_state) {
+  }
 
   /**
    * Called when submitting the settings form.
@@ -114,6 +114,7 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
    */
   public function buildEndUserEmailSignup(array $configuration) {
     $moduleHandler = \Drupal::service('module_handler');
+    $elements = [];
     if ($moduleHandler->moduleExists('bene_salsa')) {
       $salsa_config = \Drupal::config('bene_salsa.settings');
       $template_code = $salsa_config->get('sign-up');
@@ -128,8 +129,8 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
           'embed' => "<div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$template_code/?tId=$form_code'></script></div>",
         ],
       ];
-      return $elements;
     }
+    return $elements;
   }
 
 }
