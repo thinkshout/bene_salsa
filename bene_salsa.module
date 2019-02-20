@@ -2,12 +2,10 @@
 
 /**
  * @file
- * Module file for Bene Features Example.
+ * Module file for Bene Salsa.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 /**
  * Implements hook_help().
@@ -19,34 +17,19 @@ function bene_salsa_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.bene_salsa':
       $page = [
         'details' => [
-          '#markup' => '<p>' . t('Example help page for Bene Features Example.') . '</p>',
-        ],
-        'video' => [
-          '#type' => 'markup',
-          '#markup' => '<div><iframe width="441" height="331" src="https://www.youtube.com/embed/Otbml6WIQPo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
-          '#allowed_tags' => [
-            'iframe',
-          ],
+          '#markup' => '<p>' . t('To embed Salsa forms, you need to publish the forms in Engage, then visit the "Published Details" tab for the form. There you will find "Form Widget Code" that looks like this:<br/><br/><code>') .
+          Html::escape('<div id="abcd1234-ab12-12ab-ab12-123456abcdef">') . '<br/>' .
+          Html::escape('<script type="text/javascript" src="https://default.salsalabs.org/api/widget/template/') .
+          '<strong>' . Html::escape('zyxw9876-98zy-zy98-98zy-987654zyxwvu') . '</strong>' .
+          Html::escape('/?tId=') .
+          '<strong>' . Html::escape('abcd1234-ab12-12ab-ab12-123456abcdef') . '</strong>' .
+          Html::escape('></script>') . '<br/>' .
+          Html::escape('</div>') . t('</code><br/><br/>
+          The codes you need are the long strings of hyphens, numbers, and letters in the middle line after "/template" and "?tId=".') . '</p>',
         ],
       ];
       break;
 
-  }
-  return $page;
-}
-
-/**
- * Implements hook_entity_view().
- */
-
-function bene_salsa_hook_entity_view(array &$build, $entity, $display, $view_mode) {
-    $form_code = '';
-    $salsa_code = '';
-    $build['salsa_embedded_form'] = [
-        '#type' => 'inline_template',
-        '#template' => '{{ embed|raw }}',
-        '#context' => [
-            'embed' => "<div id='hello'><script type='text/javascript' src='https://default.salsalabs.org/api/widgettemplate/hi/?tId=hello' ></script> \</div>",
-        ],
-    ];
+    }
+    return $page;
 }

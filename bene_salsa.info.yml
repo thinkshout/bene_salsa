@@ -1,5 +1,5 @@
 name: Bene Salsa Module
-description: 'An example feature module: enable, configure, and disable without disrupting anything.'
+description: 'Embed Salsa Engage forms as blocks and for newsletter signup.'
 type: module
 core: 8.x
 configure: bene_salsa.configure

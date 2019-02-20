@@ -91,10 +91,7 @@ class BeneSalsaSettings extends ConfigFormBase {
     $settings = $this->configFactory()->getEditable('bene_salsa.settings');
     $values = $form_state->cleanValues()->getValues();
     foreach ($values as $field_key => $field_value) {
-        $settings->set($field_key, $field_value);
+      $settings->set($field_key, $field_value);
     }
-    $settings->save();
-    parent::submitForm($form, $form_state);
-  }
 
 }

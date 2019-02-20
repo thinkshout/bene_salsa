@@ -1,6 +1,6 @@
 {
-    "name": "thinkshout/bene_promo_redirect",
-    "description": "Promotional Redirect feature built for the Bene Distribution.",
+    "name": "thinkshout/bene_salsa",
+    "description": "Salsa Engage feature built for the Bene Distribution.",
     "type": "drupal-module",
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
