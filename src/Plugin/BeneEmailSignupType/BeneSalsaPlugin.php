@@ -126,7 +126,7 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
         '#type' => 'inline_template',
         '#template' => '{{ embed|raw }}',
         '#context' => [
-          'embed' => "<div id='salsaContainer'><div id='salsaWrapper'><div id='salsaForm'><div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$salsa_code/?tId=$form_code' ></script></div></div></div></div>",
+          'embed' => "<div id='salsaContainer'><div id='salsaWrapper'><div id='salsaForm'><div id='$form_code'><script type='text/javascript' src='https://default.salsalabs.org/api/widget/template/$template_code/?tId=$form_code' ></script></div></div></div></div>",
         ],
       ];
     }
