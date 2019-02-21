@@ -93,6 +93,7 @@ class BeneSalsaSettings extends ConfigFormBase {
     foreach ($values as $field_key => $field_value) {
       $settings->set($field_key, $field_value);
     }
-
+    $settings->save();
+    parent::submitForm($form, $form_state);
   }
 }
