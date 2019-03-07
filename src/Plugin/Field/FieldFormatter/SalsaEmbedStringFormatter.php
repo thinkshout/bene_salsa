@@ -47,7 +47,7 @@ class SalsaEmbedStringFormatter extends StringFormatter {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $salsa_code = $items->getEntity()->field_form_id[0]->getValue()['value'];
-    $form_code = $items->getEntity()->field_form_type[0]->getValue()['value'];
+    $form_code = 'salsaForm-' . $items->getEntity()->id();
     $elements = [
       '#type' => 'inline_template',
       '#template' => '{{ embed|raw }}',
@@ -58,4 +58,5 @@ class SalsaEmbedStringFormatter extends StringFormatter {
 
     return $elements;
   }
+
 }

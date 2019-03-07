@@ -116,11 +116,7 @@ class BeneSalsaPlugin extends BeneEmailSignupTypeBase {
     $moduleHandler = \Drupal::service('module_handler');
     $elements = [];
     if ($moduleHandler->moduleExists('bene_salsa')) {
-      $salsa_config = \Drupal::config('bene_salsa.settings');
-      $template_code = $salsa_config->get('sign-up');
-      if (!$template_code) {
-        return [];
-      }
+      $template_code = 'salsaNewsletterSignup';
       $form_code = $configuration['salsa_form_widget_id'];
       $elements = [
         '#type' => 'inline_template',
