@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
   - field.field.paragraph.salsa_embed.field_form_id
-  - field.field.paragraph.salsa_embed.field_form_type
   - paragraphs.paragraphs_type.salsa_embed
   module:
   - bene_salsa
@@ -19,12 +18,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_form_type:
-    type: salsa_form_options
-    weight: 0
-    region: content
-    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
