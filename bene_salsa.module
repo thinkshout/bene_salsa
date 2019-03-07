@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_help().
@@ -13,7 +14,6 @@ use Drupal\Core\Routing\RouteMatchInterface;
 function bene_salsa_help($route_name, RouteMatchInterface $route_match) {
   $page = NULL;
   switch ($route_name) {
-    // This route is from the help module: just use the right machine name.
     case 'help.page.bene_salsa':
       $page = [
         'details' => [
@@ -25,7 +25,7 @@ function bene_salsa_help($route_name, RouteMatchInterface $route_match) {
           '<strong>' . Html::escape('abcd1234-ab12-12ab-ab12-123456abcdef') . '</strong>' .
           Html::escape('></script>') . '<br/>' .
           Html::escape('</div>') . t('</code><br/><br/>
-          The codes you need are the long strings of hyphens, numbers, and letters in the middle line after "/template" and "?tId=".') . '</p>',
+          The code you need is the long strings of hyphens, numbers, and letters in the middle line after "/template" -- NOT the one that appears twice. In the example, it\'s the one that starts with "zyxw".') . '</p>',
         ],
       ];
       break;
