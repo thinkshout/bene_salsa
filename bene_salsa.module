@@ -21,11 +21,10 @@ function bene_salsa_help($route_name, RouteMatchInterface $route_match) {
           Html::escape('<div id="abcd1234-ab12-12ab-ab12-123456abcdef">') . '<br/>' .
           Html::escape('<script type="text/javascript" src="https://default.salsalabs.org/api/widget/template/') .
           '<strong>' . Html::escape('zyxw9876-98zy-zy98-98zy-987654zyxwvu') . '</strong>' .
-          Html::escape('/?tId=') .
-          '<strong>' . Html::escape('abcd1234-ab12-12ab-ab12-123456abcdef') . '</strong>' .
+          Html::escape('/?tId=abcd1234-ab12-12ab-ab12-123456abcdef') .
           Html::escape('></script>') . '<br/>' .
           Html::escape('</div>') . t('</code><br/><br/>
-          The code you need is the long strings of hyphens, numbers, and letters in the middle line after "/template" -- NOT the one that appears twice. In the example, it\'s the one that starts with "zyxw".') . '</p>',
+          The code you need is the long strings of hyphens, numbers, and letters in the middle line after "/template". In the example above, it\'s bolded and starts "zyxw".') . '</p>',
         ],
       ];
       break;
